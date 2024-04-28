@@ -9,10 +9,10 @@ This project implements a Python program to recognize different types of Python 
   * [Recognize octal and hexadecimal integer literals](###recognize-octal-and-hexadecimal-integer-literals)
   * [Recognize floating point literals](###recognize-floating-point-literals)
 
-## Requirements
+## <a name="requirements"></a>Requirements
 * Python 3.x
 
-## Group Members
+## <a name="group-members"></a>Group Members
 * **Rolando Carpio**
   - Coding for decimal, octal, hexadecimal, and floating point literals.
   * GitHub: [@rolandocarpio](https://github.com/rolandocarpio)
@@ -20,10 +20,10 @@ This project implements a Python program to recognize different types of Python 
   - Creating .jpg and .jff files in JFLAP for decimal, octal, hexadecimal, and floating point NFAs. Error checking with floating point literals.
   * GitHub: [@ericshen010](https://github.com/ericshen010)
 
-## Code Versions (Branches)
-### Recognize decimal integer literals
+## <a name="code-versions-(branches)"></a> Code Versions (Branches)
+### <a name="recognize-decimal-integer-literals"></a> Recognize decimal integer literals
 * [task-1-decimal-integer](https://github.com/rolandocarpio/Python-Numerical-Literal-Checker/tree/task1-decimal-integer)
-### Recognize octal and hexadecimal integer literals
+### <a name="recognize-octal-and-hexadecimal-integer-literals"></a> Recognize octal and hexadecimal integer literals
 * [task-2-octal-hexadecimal](https://github.com/rolandocarpio/Python-Numerical-Literal-Checker/tree/task2-octal-hexadecimal)
-### Recognize floating point literals
+### <a name="recognize-floating-point-literals"></a> Recognize floating point literals
 * [task-3-floating-point](https://github.com/rolandocarpio/Python-Numerical-Literal-Checker/tree/task3-floating-point)
