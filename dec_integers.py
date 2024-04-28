@@ -1,3 +1,5 @@
+# Task 1: Recognizing Octal and Hexadecimal Integer Literals
+
 def is_decimal_integer(input_str):
     # Define transition table: state -> {input_char: next_state}
     transitions = {
