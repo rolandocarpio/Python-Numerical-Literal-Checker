@@ -3,10 +3,10 @@
 def is_octal(input_str):
     # Define transition table for octal integers
     transitions = {
-        0: {'zero': 1,},             # From state 0, if input is '0', transition to state 1
-        1: {'o': 2},                 # From state 1, if input is 'o', transition to state 2
-        2: {'octal_digit': 3},       # From state 2, if input is an octal digit, transition to state 3
-        3: {'octal_digit': 3}        # From state 3, if input is an octal digit, stay in state 3
+        0: {'zero': 1,},                     # From state 0, if input is '0', transition to state 1
+        1: {'o': 2},                         # From state 1, if input is 'o', transition to state 2
+        2: {'octal_digit': 3, '_': 2},       # From state 2, if input is an octal digit, transition to state 3. Underscores are allowed and ignored, so stay in state 2.
+        3: {'octal_digit': 3, '_': 3}        # From state 3, if input is an octal digit, stay in state 3. Underscores are allowed and ignored, so stay in state 3.
     }
     state = 0
     for char in input_str:
@@ -15,7 +15,7 @@ def is_octal(input_str):
             state = transitions.get(state, {}).get('zero', -1)
         elif state == 1 and char.lower() == 'o':
             state = transitions.get(state, {}).get('o', -1)
-        elif state in {2, 3} and char.isdigit() and char < '8':
+        elif state in {2, 3} and ((char.isdigit() and char < '8') or char == '_'):
             state = transitions.get(state, {}).get('octal_digit', -1)
         else:
             return False
@@ -29,10 +29,10 @@ def is_octal(input_str):
 def is_hexadecimal(input_str):
     # Define transition table for hexadecimal integers
     transitions = {
-        0: {'zero': 1},          # From state 0, if input is '0', transition to state 1
-        1: {'x': 2},             # From state 1, if input is 'x', transition to state 2
-        2: {'hex_digit': 3},     # From state 2, if input is a hex digit, transition to state 3
-        3: {'hex_digit': 3}      # From state 3, if input is a hex digit, stay in state 3
+        0: {'zero': 1},                  # From state 0, if input is '0', transition to state 1
+        1: {'x': 2},                     # From state 1, if input is 'x', transition to state 2
+        2: {'hex_digit': 3, '_': 2},     # From state 2, if input is a hex digit, transition to state 3. Underscores are allowed and ignored, so stay in state 2.
+        3: {'hex_digit': 3, '_': 3}      # From state 3, if input is a hex digit, stay in state 3. Underscores are allowed and ignored, so stay in state 3.
     }
     state = 0
     for char in input_str:
@@ -41,7 +41,7 @@ def is_hexadecimal(input_str):
             state = transitions.get(state, {}).get('zero', -1)
         elif state == 1 and char.lower() == 'x':
             state = transitions.get(state, {}).get('x', -1)
-        elif state in {2, 3} and (char.isdigit() or char.lower() in 'abcdef'):
+        elif state in {2, 3} and (char.isdigit() or char == '_' or char.lower() in 'abcdef'):
             state = transitions.get(state, {}).get('hex_digit', -1)
         else:
             return False
@@ -51,6 +51,6 @@ def is_hexadecimal(input_str):
     # Return True if the final state is 3 (accepting state), otherwise return False
     return state == 3
 
-# Prompt user for input string for Task 2
+# Prompt user for input string
 input_str = input("Enter a string to check if it's a valid octal or hexadecimal integer: ")
 print(f"{input_str}: octal={is_octal(input_str)}, hexadecimal={is_hexadecimal(input_str)}")
