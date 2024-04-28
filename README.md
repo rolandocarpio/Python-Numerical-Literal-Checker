@@ -6,11 +6,9 @@ This project implements a Python program to recognize different types of Python 
 * [Usage](##usage)
 * [Group Members](##group-members)
 * [Code Versions (Tags)](##code-versions-(tags))
-  * Task 1
-  * Task 2
-  * Task 3
-* Features
-* License
+  * [Recognize decimal integer literals](###recognize-decimal-integer-literals)
+  * [Recognize octal and hexadecimal integer literals](###recognize-octal-and-hexadecimal-integer-literals)
+  * [Recognize floating point literals](###recognize-floating-point-literals)
 
 ## Requirements
 * Python 3.x
@@ -30,7 +28,7 @@ This project implements a Python program to recognize different types of Python 
   - Coding for decimal, octal, hexadecimal, and floating point literals.
   * GitHub: [@rolandocarpio](https://github.com/rolandocarpio)
 * **Eric Shen**
-  - Creating JPGs and JFFs for decimal, octal, hexadecimal, and floating point NFAs. Error checking with floating point literals.
+  - Creating .jpg and .jff files in JFLAP for decimal, octal, hexadecimal, and floating point NFAs. Error checking with floating point literals.
   * GitHub: [@ericshen010](https://github.com/ericshen010)
 
 ## Code Versions (Tags)
@@ -40,6 +38,6 @@ This project implements a Python program to recognize different types of Python 
 ### Recognize octal and hexadecimal integer literals
 * v1.0-task2:
   * Initial version with basic functionality for recognizing octal and hexadecimal integer literals.
-### Recognize decimal integers
+### Recognize floating point literals
 * v1.0-task3:
   * Initial version with basic functionality for recognizing floating-point literals.
